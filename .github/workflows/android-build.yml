@@ -25,9 +25,12 @@ jobs:
 
       - name: Build Release APK
         run: ./gradlew assembleRelease
+      
+      - name: List build directory
+        run: ls -la app/build/outputs/apk/release/
 
       - name: Upload APK Artifact
-        uses: actions/upload-artifact@v2.3.1
+        uses: actions/upload-artifact@v2
         with:
           name: app-release-apk
           path: app/build/outputs/apk/release/app-release.apk
